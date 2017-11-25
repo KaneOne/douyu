@@ -60,12 +60,14 @@ function formatDanmu(msg) {
     let splited = msg[i].split('@=');
     map[splited[0]] = splited[1];
   }
+  console.log(map);
   return map;
+
 }
 
 function analyseDanmu(msg) {
   if (msg['type'] == 'chatmsg') {
-    console.log(msg['nn'] + ':' + msg['txt']);
+    console.log(msg['nn'] + '(等级：'+msg['level']+',rg：'+msg['rg']+'):' + msg['txt']);
   }
   if (msg['type'] == 'uenter') {
     console.log('<=========[' + msg['nn'] + ']来了=========>');
